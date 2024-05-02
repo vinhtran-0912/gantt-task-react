@@ -10,7 +10,6 @@ export const Project: React.FC<TaskItemProps> = ({ task, isSelected }) => {
     ? task.styles.progressSelectedColor
     : task.styles.progressColor;
   const projectWith = task.x2 - task.x1;
-
   const projectLeftTriangle = [
     task.x1,
     task.y + task.height / 2 - 1,
@@ -42,7 +41,7 @@ export const Project: React.FC<TaskItemProps> = ({ task, isSelected }) => {
       />
       <rect
         x={task.progressX}
-        width={task.progressWidth}
+        width={isNaN(task.progressWidth) ? 0 : task.progressWidth}
         y={task.y}
         height={task.height}
         ry={task.barCornerRadius}

@@ -12,7 +12,7 @@ type BarDateHandleProps = {
 export const BarDateHandle: React.FC<BarDateHandleProps> = ({
   x,
   y,
-  width,
+  width = 0,
   height,
   barCornerRadius,
   onMouseDown,

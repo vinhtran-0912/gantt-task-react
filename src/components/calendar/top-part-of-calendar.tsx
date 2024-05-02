@@ -1,5 +1,4 @@
 import React from "react";
-import styles from "./calendar.module.css";
 
 type TopPartOfCalendarProps = {
   value: string;
@@ -13,29 +12,12 @@ type TopPartOfCalendarProps = {
 export const TopPartOfCalendar: React.FC<TopPartOfCalendarProps> = ({
   value,
   x1Line,
-  y1Line,
-  y2Line,
-  xText,
-  yText,
 }) => {
   return (
-    <g className="calendarTop">
-      <line
-        x1={x1Line}
-        y1={y1Line}
-        x2={x1Line}
-        y2={y2Line}
-        className={styles.calendarTopTick}
-        key={value + "line"}
-      />
-      <text
-        key={value + "text"}
-        y={yText}
-        x={xText}
-        className={styles.calendarTopText}
-      >
+    <div className="calendar-top" style={{ width: x1Line, minWidth: x1Line }}>
+      <p key={value + "text"} className="text">
         {value}
-      </text>
-    </g>
+      </p>
+    </div>
   );
 };

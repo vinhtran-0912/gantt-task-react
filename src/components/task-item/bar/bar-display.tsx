@@ -22,7 +22,7 @@ type BarDisplayProps = {
 export const BarDisplay: React.FC<BarDisplayProps> = ({
   x,
   y,
-  width,
+  width = 0,
   height,
   isSelected,
   progressX,
